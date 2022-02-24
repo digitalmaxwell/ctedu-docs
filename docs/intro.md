@@ -42,7 +42,7 @@ Contentful gives you the flexibility to define explicit fields, types, validatio
 ![Content Model Example](/img/content-model-example.png)
 
 ### Entries
-Each entry can be searched in Contentful and embedded in multiple places helping to avoid duplicate variations of certain sections/components etc. This has proven to be very useful.
+Each entry can be embedded in multiple places helping to avoid duplicate variations of certain sections/components. This creates consistency across the site and has proven very useful.
 
 Entries can also be embedded within each other using [references](https://www.contentful.com/help/references/) to create robust layouts, templates etc. Checkout the Layout Builder to learn how entries are translated into components.
 
