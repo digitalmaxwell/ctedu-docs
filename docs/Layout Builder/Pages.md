@@ -1,0 +1,6 @@
+---
+---
+
+# Pages
+
+## Create a Page

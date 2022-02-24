@@ -11,6 +11,8 @@ Documentation for the coach training edu website built using: **React, Gatsby, T
 
 This React project is built on [Gatsby](https://www.gatsbyjs.com/) which is a powerful static site generator.
 
+`gatsby-node.js` is used to generate blog posts, knowledge base posts, location pages
+
 <!-- #### Basic Commands:
 Start development server
 ```
@@ -33,21 +35,33 @@ Unlike a typical CMS like Wordpress, this interface corresponds with custom Reac
 
 This is all possible using [the gatsby source contentful plugin](https://www.gatsbyjs.com/plugins/gatsby-source-contentful/) which allows you to query the Contentful API using Gatsby and GraphQL.
 
-The way data is structured in Contentful is similar to a relational database. **Content Models** define explicit fields, types, validation and apperance of how the entry will look in the editor. **Entries** can be embedded within each other to create robust layouts, templates etc. Each **Entry** can be searched in Contentful and embedded in multiple places helping to avoid duplicate iterations of certain sections/components etc. This has proven to be very useful.
+### Content Models
+Contentful gives you the flexibility to define explicit fields, types, validation and apperance of how the entry will look in the editor. 
+<!-- Here is an example of a the page content model.  -->
 
+![Content Model Example](/img/content-model-example.png)
 
-<!-- Here is an example of a content model utilizing the type "References" which allows for nesting of other entries.
+### Entries
+Each entry can be searched in Contentful and embedded in multiple places helping to avoid duplicate variations of certain sections/components etc. This has proven to be very useful.
 
-![Content Model Example](/img/content-model-example.png) -->
+Entries can also be embedded within each other using [references](https://www.contentful.com/help/references/) to create robust layouts, templates etc. Checkout the Layout Builder to learn how entries are translated into components.
+
+- [Create a Page](/Layout%20Builder/Pages#create-a-page/)
+- [Create a template](/)
+
+<!-- - Create a page -->
+
+![Content Model Example](/img/content-model-example-6.png)
+
 
 ## Tailwind CSS
 [Tailwind](https://tailwindcss.com/) is a CSS framework that can be composed to build any design, directly in your markup. This is a VERY useful tool helping to provide consistent classes the team can use to develop components.
 
-### Cheat sheet
+### Cheat sheet ![](/img/tailwindcomponents-favicon.ico)
 
 [This website](https://tailwindcomponents.com/cheatsheet/) simplifies the tailwind docs so you can easily find the classes you need
 
-### Configuration:
+### Configuration
 
 Fonts, colors, variants, and tailwind plugins are defined in `tailwind.config.js`
 
