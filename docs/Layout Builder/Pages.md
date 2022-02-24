@@ -8,6 +8,7 @@
 ![Add Page](/img/add-page.png)
 
 Using the default project structure of gatsby to our advantage, we create our pages in `./src/pages/`
+This 
 
 You can use the code below as a model to create a new page:
 
@@ -38,6 +39,6 @@ const newPage = ({location}) => {
 export default newPage
 ```
 
-`RenderLayoutBlocks.js` uses [MatchComponent](/Layout%20Builder/match-component) to render layout.
-
 useStaticQuery fetches the data from graphql using the page fragment. This will return the seoTitle, seoDescription, and the layout references.
+
+`RenderLayoutBlocks.js` uses [MatchComponent](/Layout%20Builder/match-component) to render the layout.
