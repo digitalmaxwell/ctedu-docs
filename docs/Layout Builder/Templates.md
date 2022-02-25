@@ -5,8 +5,9 @@
 
 ## Create a new template
 
-Templates are meant to be a reusable entry that contains a customizable layout. This allows for dynamically generated pages or frequently created layouts to be easily updated in one place.
+Templates are reusable entries that contains a customizable layout. This allows for dynamically generated pages or frequently created layouts to be easily updated in one place.
 
+### Setup Contentful Entry
 Just like creating a page, first you need to setup an entry in contentful. Select the "Template" Content Type in the search bar and click Add Template.
 
 ![Add Template](/img/add-template-2.png)
@@ -15,9 +16,14 @@ Below is an example of the Powerful Paragraph Template made for Blog Posts. When
 
 ![Dynamic Template Example](/img/dynamic-template-example.png)
 
-[add code example here]
+### Add Template to Content Model
 
-<!-- ```jsx title="/src/templates/newTemplate.js"
+... [add picture]
+
+
+### Code setup
+
+```jsx title="/src/templates/newTemplate.js"
 
 import React from 'react'
 import { graphql } from 'gatsby'
@@ -60,7 +66,7 @@ export const query = graphql`
     }
 ` 
 
-``` -->
+```
 
 ## Dynamic Template Components
 
