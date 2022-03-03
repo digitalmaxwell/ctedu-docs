@@ -56,17 +56,17 @@ GraphQL is a query language for requesting information from an API, and a protoc
 
 ### Fragments
 
-Fragments allow you to reuse parts of GraphQL queries. It also allows you to split up complex queries into smaller, easier to understand components. [Learn More.](https://www.gatsbyjs.com/docs/reference/graphql-data-layer/using-graphql-fragments/) In our project, Fragments are crucial to maintaining the queries tied to data stored in Contentful.
+Fragments allow you to reuse parts of GraphQL queries. It also allows you to split up complex queries into smaller, easier to understand components. [Learn More.](https://www.gatsbyjs.com/docs/reference/graphql-data-layer/using-graphql-fragments/)
 
-Inside of the folder `/src/graphql-fragments/` there are several important files to pay attention to.
+In our project, Fragments are crucial to maintaining the queries tied to data stored in Contentful. Inside of the folder `/src/graphql-fragments/` there are several important files to pay attention to.
 
 `LayoutFragment.js` is a special fragment we designed for the Layout Builder. In this file we have organized all of the queries for Content Models in Contentful that correspond with a component we have built in React. As you can see below, the fragment will only work on the Content Type of _Node_. This represents a reference field in Contentful. Using the spread option, ... _on_ _ContentfulType_ allows you to optionally query data if that content type is present in the reference field. 
 
 There are a few places where this fragment is used: **Pages, Templates, Rich Text and the Column Grid component.**
 This fragment gives us a central file where all of the queries can be easily updated.
 
-:::info
-One limitation to keep in mind with fragments, is that **you cannot spread a fragment of the same type within itself**. For example, in the code below we don't include the Page, Template, Rich Text and Column Grid fragments, because that would break the rule. Check the code for `PageFragment.js` to see how we resolve this for our setup.
+:::caution
+One limitation to keep in mind with fragments is that **you cannot spread a fragment of the same type within itself**. For example, in the code below we don't include the Page, Template, Rich Text and Column Grid fragments because they use the layout fragment to query references. If you ignore this, Gatsby will throw an error. Check the code for `PageFragment.js` to see how we resolve this for our setup.
 :::
 
 ```jsx title="/src/graphql-fragments/LayoutFragment.js"
@@ -89,7 +89,11 @@ export const LayoutFragment = graphql`
 `
 ```
 
-`PageFragment.js` is used to query the SEO Title/description and Layout for each page. As you can see below, the Column Grid and Rich Text fragments are added along side the Layout Fragment to avoid spreading a fragment of the same type within itself. The other fragments generating dynamic layouts follow the same pattern.
+`PageFragment.js` is used to query the SEO Title/description and Layout for each page. As you can see below, the Column Grid and Rich Text fragments are added along side the Layout Fragment to avoid spreading a fragment of the same type within itself. The Column Grid and Rich Text fragments follow the same pattern, leaving out the Column Grid and Rich Text fragments respectively.
+
+:::tip
+If you would like to design support for a Column Grid to be embedded within itself you need to create a seperate fragment to wrap the conflicting type. The same would work for Rich Text and any future functionality that might be required. For now we don't need that support.
+:::
 
 ```jsx title="/src/graphql-fragments/PageFragment.js"
 
