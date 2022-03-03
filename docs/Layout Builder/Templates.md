@@ -44,7 +44,7 @@ Now that you have set up your Template in Contentful, there are a few steps invo
 
 New templates are created in the `/src/templates/` folder and then rendered using `gatsby-node.js` with the `createPage` function provided by gatsby.js. You can learn more about the gatsby actions we leverage [here](/Frameworks/gatsby).
 
-### Create pages
+### Dynamically Create pages
 
 Below is an example of templates being implemented for the CTEDU location pages.
 First we query all of the location pages with their respective slug and title. Then the code loops through the data and renders the pages dynamically using the `createPage` function. The slug is used to generate the page path and the title is passed to the context of the template.
