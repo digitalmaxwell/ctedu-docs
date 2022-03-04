@@ -17,7 +17,7 @@ Contentful gives you the flexibility to define explicit fields, types, validatio
 ![Content Model Example](/img/content-model-example.png)
 
 ## Entries
-Each entry can be embedded in multiple places helping to avoid duplicate variations of certain sections/components. This creates consistency across the site and has proven very useful.
+An entry is an instance of a content model stored in Contentful. Each entry can be embedded in multiple places helping to avoid duplicate variations of certain sections/components. This creates consistency across the site and has proven very useful.
 
 Entries can also be embedded within each other using [references](https://www.contentful.com/help/references/) to create robust layouts, templates etc. Checkout the Layout Builder documentation to learn how entries are translated into components.
 
@@ -26,4 +26,20 @@ Entries can also be embedded within each other using [references](https://www.co
 
 <!-- - Create a page -->
 
-![Content Model Example](/img/content-model-example-6.png)
+![Entry Example](/img/content-model-example-6.png)
+
+## Webhook
+
+Webhooks are HTTP callbacks which can be used to send notifications when data in Contentful is changed, allowing external systems to react to changes to do things such as trigger a website rebuild or send a notification to a chat application. [Learn More.](https://www.contentful.com/developers/docs/concepts/webhooks/)
+
+For our project, we are utilizing the git dispatch API to trigger a build for our repository (see the image below). What happens on this API call is configured using git actions. Learn more about our deployment setup [here](/Deployment/Git#actions).
+
+![Webhook1](/img/webhook-1.png)
+
+After setting up the URL and specific triggers, we have set up a custom *filter* to only publish live when the `release` page entry is published. This is a temporary solution and we are working on a more robust preview setup as you're reading this. :monkey:
+
+![Webhook2](/img/webhook-2.png)
+
+You can also customize the payload which will show up in the git actions tab.
+
+![Webhook2](/img/webhook-3.png)

@@ -32,7 +32,6 @@ import SEO from "../components/seo"
 import RenderLayoutBlocks from "../components/ContentfulLayout/renderLayoutBlocks"
 
 const newPage = ({location}) => {
-
     const data = useStaticQuery(graphql`
         query {
             contentfulPage(slug: {eq: "your-slug-here"}) {
