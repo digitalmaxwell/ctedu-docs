@@ -60,6 +60,8 @@ Fragments allow you to reuse parts of GraphQL queries. It also allows you to spl
 
 In our project, Fragments are crucial to maintaining the queries tied to data stored in Contentful. Inside of the folder `/src/graphql-fragments/` there are several important files to pay attention to.
 
+### Layout Fragment
+
 `LayoutFragment.js` is a special fragment we designed for the Layout Builder. In this file we have organized all of the queries for Content Models in Contentful that correspond with a component we have built in React. As you can see below, the fragment will only work on the Content Type of _Node_. This represents a reference field in Contentful. Using the spread option, ... _on_ _ContentfulType_ allows you to optionally query data if that content type is present in the reference field. 
 
 There are a few places where this fragment is used: **Pages, Templates, Rich Text and the Column Grid component.**
@@ -89,7 +91,9 @@ export const LayoutFragment = graphql`
 `
 ```
 
-`PageFragment.js` is used to query the SEO Title/description and Layout for each page. As you can see below, the Column Grid and Rich Text fragments are added along side the Layout Fragment to avoid spreading a fragment of the same type within itself. The Column Grid and Rich Text fragments follow the same pattern, leaving out the Column Grid and Rich Text fragments respectively.
+### Page Fragment
+
+`PageFragment.js` is used to query the SEO Title/description and Layout for each page. As you can see below, the Column Grid and Rich Text fragments are added along side the Layout Fragment to avoid spreading a fragment of the same type within itself. **The Template, Column Grid, and Rich Text fragments also follow the same pattern.**
 
 :::tip
 If you would like to design support for a Column Grid to be embedded within itself you need to create a seperate fragment to wrap the conflicting type. The same would work for Rich Text and any future functionality that might be required. For now we don't need that support.

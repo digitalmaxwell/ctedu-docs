@@ -42,14 +42,16 @@ Once complete, the template field will be accessible in your content model. Here
 
 Now that you have set up your Template in Contentful, there are a few steps involved to get it working in our application.
 
-New templates are created in the `/src/templates/` folder and then rendered using `gatsby-node.js` with the `createPage` function provided by gatsby.js. You can learn more about the gatsby actions we leverage [here](/Frameworks/gatsby).
+New templates are created in the `/src/templates/` folder and then rendered using `gatsby-node.js` with the `createPage` function provided by gatsby.js. You can learn more about the gatsby APIs we leverage [here](/Frameworks/gatsby).
 
 ### Dynamically Create pages
 
 Below is an example of templates being implemented for the CTEDU location pages.
 First we query all of the location pages with their respective slug and title. Then the code loops through the data and renders the pages dynamically using the `createPage` function. The slug is used to generate the page path and the title is passed to the context of the template.
 
-**For your use case, adapt the query to your paramaters and add any additional pre-processing neccessary.**
+:::tip
+For your use case, adapt the query to your paramaters and add any additional pre-processing neccessary.
+:::
 
 ```jsx title="gatsby-node.js"
 
@@ -86,9 +88,10 @@ First we query all of the location pages with their respective slug and title. T
 
 Once you have configured your dynamically rendered your pages in `gatsby-node.js`, you need to set up the template component.
 
-Inside of the query, we can access the context from `createPage` function. We use the title to fetch each locations data, which is then passed to the prop `data` in the `Location` component. `RenderLayoutBlocks` uses this data to parse the layout of the page.
 
-**Use this location template as a model for your own implementation:** 
+:::tip Use this location template below as a model for your own implementation.
+Inside of the query, we can access the context from `createPage` function. We use the title to fetch each locations data, which is then passed to the prop `data` in the `Location` component. `RenderLayoutBlocks` uses this data to parse the layout of the page.
+:::
 
 ```jsx title="/src/templates/location3.js"
 

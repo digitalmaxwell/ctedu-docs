@@ -19,10 +19,10 @@ Contentful gives you the flexibility to define explicit fields, types, validatio
 ## Entries
 Each entry can be embedded in multiple places helping to avoid duplicate variations of certain sections/components. This creates consistency across the site and has proven very useful.
 
-Entries can also be embedded within each other using [references](https://www.contentful.com/help/references/) to create robust layouts, templates etc. Checkout the Layout Builder to learn how entries are translated into components.
+Entries can also be embedded within each other using [references](https://www.contentful.com/help/references/) to create robust layouts, templates etc. Checkout the Layout Builder documentation to learn how entries are translated into components.
 
-- [Create a Page](/Layout%20Builder/Pages#create-a-page/)
-- [Create a template](/)
+- [Create a Page](/Layout%20Builder/Pages)
+- [Create a template](/Layout%20Builder/Templates)
 
 <!-- - Create a page -->
 
