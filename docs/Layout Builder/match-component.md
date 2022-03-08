@@ -13,7 +13,19 @@ Below is a simplified version of this component.
 ... explain recursivness (link to dynamic template component docs in contentful), implementation in columnGrid, rich text, renderLayout. 
 
 ```jsx title="/src/components/ContentfulLayoutBuilder/MatchComponent.js"
-const MatchComponent = ({contentType, componentData, parentData, nestedComponent, padding, layout, index, backgroundColor}) => {
+import React, { cloneElement } from "react"
+//import your components here
+
+const MatchComponent = ({
+    contentType, //used to...
+    componentData, //..
+    parentData, //..
+    nestedComponent, //..
+    padding, //..
+    layout, //..
+    index, //..
+    backgroundColor //..
+}) => {
     let Component, styles = {}
 
     if (padding) styles = componentPadding({contentType, componentData, nestedComponent, layout, index})
