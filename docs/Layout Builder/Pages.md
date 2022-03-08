@@ -29,7 +29,7 @@ import React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import Layout from "../components/Layout/layout"
 import SEO from "../components/seo"
-import RenderLayoutBlocks from "../components/ContentfulLayout/renderLayoutBlocks"
+import RenderLayout from "../components/ContentfulLayout/RenderLayout"
 
 const newPage = ({location}) => {
     const data = useStaticQuery(graphql`
@@ -42,7 +42,7 @@ const newPage = ({location}) => {
     return (
         <Layout>
             <SEO location={location} title={data.contentfulPage.seoTitle} description={data.contentfulPage.seoDescription}/>
-            <RenderLayoutBlocks layout={data.contentfulPage.layout}/>
+            <RenderLayout layout={data.contentfulPage.layout}/>
         </Layout>
     )
 }
@@ -52,4 +52,4 @@ export default newPage
 
 useStaticQuery fetches the data from graphql using the [Page Fragment](/Frameworks/gatsby#page-fragment), learn more about GraphQL Fragments [here](/Frameworks/gatsby). This will return the seoTitle, seoDescription, and the layout references.
 
-`RenderLayoutBlocks.js` uses [MatchComponent](/Layout%20Builder/match-component) to render the layout.
+`RenderLayout.js` uses [MatchComponent](/Layout%20Builder/match-component) to render the layout.

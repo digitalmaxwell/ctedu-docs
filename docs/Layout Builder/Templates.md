@@ -90,7 +90,7 @@ Once you have configured your dynamically rendered your pages in `gatsby-node.js
 
 
 :::tip Use this location template below as a model for your own implementation.
-Inside of the query, we can access the context from `createPage` function. We use the title to fetch each locations data, which is then passed to the prop `data` in the `Location` component. `RenderLayoutBlocks` uses this data to parse the layout of the page.
+Inside of the query, we can access the context from `createPage` function. We use the title to fetch each locations data, which is then passed to the prop `data` in the `Location` component. `RenderLayout` uses this data to parse the layout of the page.
 :::
 
 ```jsx title="/src/templates/location3.js"
@@ -99,14 +99,14 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from "../components/Layout/layout"
 import SEO from "../components/seo"
-import RenderLayoutBlocks from "../components/ContentfulLayout/renderLayoutBlocks"
+import RenderLayouts from "../components/ContentfulLayout/RenderLayout"
 
 const Location = ({location, data}) => {
     return (
         <Layout>
             <SEO location={location} title={data.contentfulLocation.seoTitle} description={data.contentfulLocation.seoDescription}/>
             { data.contentfulLocation.template &&
-                <RenderLayoutBlocks
+                <RenderLayout
                     layout={data.contentfulLocation.template.layout}
                     parentData={data.contentfulLocation}
                 />
@@ -157,3 +157,5 @@ The field "Component Key" looks for the field with the corresponding Content Typ
 In this example, the Powerful Paragraph Template is being used for this Blog Post. `Powerful Paragraph Section One` contains a reference to a Rich Text entry.
 
 ![Template Example](/img/template-example-4.png)
+
+Learn how Dynamic Template Components are rendered using Match Component [here.](/Layout%20Builder/match-component#add-your-component)
