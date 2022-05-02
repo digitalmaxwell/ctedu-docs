@@ -9,6 +9,8 @@ Documentation for the coach training edu website: [coachtrainingedu.com](https:/
 
 Built on **React, Gatsby, Tailwind and Contentful. Deployed on Firebase**
 
+Docs written by Maxwell Chandler: https://github.com/widthx
+
 <!-- ## Links
 
 ### Firebase
